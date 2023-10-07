@@ -1,0 +1,55 @@
+.photographer_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.photographer_section article {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.photographer_section article h2 {
+  color: #D3573C;
+  font-size: 36px;
+  margin-bottom: auto;
+}
+
+.photographer_section article img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.photographerLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 325px;
+}
+
+.cityCountry {
+  color: #901C1C;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.tagLine {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.photographerPrice {
+  color: #757575;
+  font-size: 9px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}/*# sourceMappingURL=card.css.map */
