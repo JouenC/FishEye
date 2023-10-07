@@ -7,7 +7,6 @@ async function getPhotographer() {
         
         // Recherche dans les data le photographe correspnodant à l'Id
         const photogarpherPage = data.photographers.find((photographer) => photographer.id === Number(id))
-        console.log(photogarpherPage)
         return photogarpherPage
     } catch (error) {
         console.error(error)
@@ -28,9 +27,7 @@ const getUrlQuery = (param) => {
 
 async function displayDataPage(photographer) {
     const photographersSection = document.querySelector(".photograph-header")
-    console.log(photographer)
     const photographerModel = photographerTemplatePage(photographer);
-    console.log(photographerModel)
     const userCardDOM = photographerModel.getUserCardDOMPage();
     photographersSection.appendChild(userCardDOM);
     

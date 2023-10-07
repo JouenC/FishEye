@@ -11,6 +11,7 @@ function photographerTemplate(data) {
 
         const photographersCardLink = document.createElement("a")
         photographersCardLink.setAttribute("href", `photographer.html?id=${id}`)
+        photographersCardLink.setAttribute("aria-label", `${name}`)
         photographersCardLink.className += "photographerLink"
 
         const h2 = document.createElement( 'h2' );
