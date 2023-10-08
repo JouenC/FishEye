@@ -96,6 +96,13 @@ header {
   object-fit: cover;
 }
 
+.tagLinePage {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
 #contact_modal {
   display: none;
 }
