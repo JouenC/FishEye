@@ -1,13 +1,14 @@
 function photographerTemplate(data) {
-    const { name, id, city, country, tagline, price, portrait } = data;
+    const { name, id, city, country, tagline, price, portrait } = data
 
-    const picture = `assets/photographers/${portrait}`;
+    const picture = `assets/photographers/${portrait}`
 
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
+        const article = document.createElement( 'article' )
 
-        const img = document.createElement( 'img' );
+        const img = document.createElement( 'img' )
         img.setAttribute("src", picture)
+        img.setAttribute("alt", `${name}`)
 
         const photographersCardLink = document.createElement("a")
         photographersCardLink.setAttribute("href", `photographer.html?id=${id}`)
@@ -32,12 +33,12 @@ function photographerTemplate(data) {
         photographersCardLink.appendChild(img)
         photographersCardLink.appendChild(h2)
 
-        article.appendChild(photographersCardLink);
-        article.appendChild(location);
-        article.appendChild(photographersTagline);
-        article.appendChild(photographersPrice);
+        article.appendChild(photographersCardLink)
+        article.appendChild(location)
+        article.appendChild(photographersTagline)
+        article.appendChild(photographersPrice)
 
-        return (article);
+        return (article)
     }
     return { name, picture, getUserCardDOM }
 }
