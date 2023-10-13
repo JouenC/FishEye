@@ -1,3 +1,4 @@
+/*photographHeader ligne 14*/
 h1 {
   color: #901C1C;
   margin-right: 100px;
@@ -25,11 +26,18 @@ header {
   margin-left: 100px;
 }
 
+main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
 .photographer_section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 100px;
+  max-width: 1200px;
 }
 
 .photographer_section article {
@@ -87,9 +95,17 @@ header {
   width: 1240px;
   margin: 0 100px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.photograph-header article img {
+.cardPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.photograph-header img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -97,9 +113,18 @@ header {
 }
 
 .tagLinePage {
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
+  font-size: 18px;
+  color: #525252;
+}
+
+.cityCountryPage {
+  color: #901C1C;
+  font-size: 24px;
+}
+
+.namePage {
+  color: #d3573d;
+  font-size: 64px;
   margin: 0;
 }
 

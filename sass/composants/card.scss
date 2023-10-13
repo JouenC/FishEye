@@ -1,8 +1,15 @@
+main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .photographer_section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 100px;
+    max-width: 1200px;
 }
 
 .photographer_section article {

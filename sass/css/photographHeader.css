@@ -1,14 +1,38 @@
 .photograph-header {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   height: 313px;
   width: 1240px;
   margin: 0 100px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.photograph-header article img {
+.cardPage {
+  display: flex;
+  flex-direction: column;
+}
+
+.photograph-header img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.tagLinePage {
+  font-size: 18px;
+  color: #525252;
+}
+
+.cityCountryPage {
+  color: #901C1C;
+  font-size: 24px;
+}
+
+.namePage {
+  color: #d3573d;
+  font-size: 64px;
+  margin: 0;
 }/*# sourceMappingURL=photographHeader.css.map */
