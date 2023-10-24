@@ -12,16 +12,16 @@ function mediaFactory(data) {
       // If the media is an image add the appropriate media card html to the article element
       if (image) {
         article.innerHTML = `
-        <button class="media-card-button" aria-label="Bouton d'ouverture de lightbox">
-          <img class="media-card-img" src="assets/images/${photographerId}/${image}" alt="${title}">
-        </button>
-        <section class="media-card-info">
-          <h2 class="media-card-title">${title}</h2>
-          <div class="media-like-container">
-            <span class="media-like-count">${likes}</span>
-            <button class="media-like-button" aria-label="Bouton de likes">
-              <i class="media-like-logo fa-heart fa-regular"></i>
-            </button>
+        <div class="mediaCardDiv" aria-label="Bouton d'ouverture de lightbox">
+          <img class="mediaCardImage" src="assets/images/${photographerId}/${image}" alt="${title}">
+        </div>
+        <section class="mediaCardInfo">
+          <h2 class="mediaCardTitle">${title}</h2>
+          <div class="mediaLikeContainer">
+            <span class="mediaLikeCount">${likes}</span>
+            <div class="mediaLikeButton" aria-label="Cliquer pour liker">
+              <i class="mediaLikeLogo fa-heart fa-solid"></i>
+            </div>
           </div>
         </section>
       `;
@@ -30,18 +30,18 @@ function mediaFactory(data) {
       // If the media is a video add the appropriate media card html to the article element
       if (video) {
         article.innerHTML = `
-        <button class="media-card-button" aria-label="Bouton d'ouverture de lightbox">
-          <video class="media-card-video" title="${title}">
+        <div class="mediaCardDiv" aria-label="Bouton d'ouverture de lightbox">
+          <video class="mediaCardVideo" title="${title}">
             <source src="assets/images/${photographerId}/${video}" type="video/mp4">
           </video>
-        </button>
-        <section class="media-card-info">
-          <h2 class="media-card-title">${title}</h2>
-          <div class="media-like-container">
-            <span class="media-like-count">${likes}</span>
-            <button class="media-like-button" aria-label="Bouton de likes">
-            <i class="media-like-logo fa-heart fa-regular"></i>
-            </button>
+        </div>
+        <section class="mediaCardInfo">
+          <h2 class="mediaCardTitle">${title}</h2>
+          <div class="mediaLikeContainer">
+            <span class="mediaLikeCount">${likes}</span>
+            <div class="mediaLikeButton" aria-label="Cliquer pour liker">
+              <i class="mediaLikeLogo fa-heart fa-solid"></i>
+            </div>
           </div>
         </section>
       `;

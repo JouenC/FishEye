@@ -1,0 +1,52 @@
+.photograph-media {
+    display: flex;
+    max-width: 1240px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 100px;
+}
+
+.mediaCard {
+    padding-top: 25px;
+    width: 350px;
+}
+
+.mediaCardImage,
+.mediaCardVideo {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.mediaCardInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.mediaCardTitle,
+.mediaLikeCount {
+    color: $primary-color;
+    font-size: 24px;
+}
+
+.mediaLikeContainer {
+    display: flex;
+    align-items: flex-end;
+}
+
+.mediaLikeButton {
+    padding-left: 5px;
+}
+
+.fa-heart {
+    width: 21px;
+    height: 24px;
+    color: $primary-color;
+}

@@ -8,6 +8,13 @@ a {
   text-decoration: none;
 }
 
+main {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   margin: 0;
@@ -24,12 +31,6 @@ header {
 .logo {
   height: 50px;
   margin-left: 100px;
-}
-
-main {
-  display: flex;
-  width: 100%;
-  justify-content: center;
 }
 
 .photographer_section {
@@ -92,7 +93,7 @@ main {
 .photograph-header {
   background-color: #FAFAFA;
   height: 313px;
-  width: 1240px;
+  max-width: 1240px;
   margin: 0 100px;
   border-radius: 5px;
   display: flex;
@@ -126,6 +127,59 @@ main {
   color: #d3573d;
   font-size: 64px;
   margin: 0;
+}
+
+.photograph-media {
+  display: flex;
+  max-width: 1240px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 100px;
+}
+
+.mediaCard {
+  padding-top: 25px;
+  width: 350px;
+}
+
+.mediaCardImage,
+.mediaCardVideo {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.mediaCardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-wrap: break-word;
+}
+
+.mediaCardTitle,
+.mediaLikeCount {
+  color: #901C1C;
+  font-size: 24px;
+}
+
+.mediaLikeContainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+.mediaLikeButton {
+  padding-left: 5px;
+}
+
+.fa-heart {
+  width: 21px;
+  height: 24px;
+  color: #901C1C;
 }
 
 #contact_modal {
