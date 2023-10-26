@@ -54,3 +54,33 @@ function mediaFactory(data) {
     // Returning an object with the getMediaCardDOM function
     return { getMediaCardDOM };
   }
+
+function renderFooter(data) {
+  // Destructuring the photographer info object to extract the photographer price
+  const { price } = data
+
+  // Calculate total media likes count and store it in a variable
+  const mediaLikeCount = document.querySelectorAll(".mediaLikeCount")
+  let totalMediaLikeCount = 0
+
+  mediaLikeCount.forEach((media) => {
+    totalMediaLikeCount += Number(media.textContent)
+  })
+
+  // Create the HTML for the footer section
+  const photographFooter = `
+    <div class="footerDiv">
+      <div class="footerInfo">
+        <span class="footerLike" id="totalLikesCount">${totalMediaLikeCount}</span>
+        <i class="footerHeart fa-solid fa-heart"></i>
+      </div>
+      <div class="footerPrice">
+        ${price} € / jour
+      </div>
+    </div>
+  `;
+
+  // Add the footer section HTML to the footer element
+  const footer = document.querySelector(".footer")
+  footer.innerHTML = photographFooter
+}

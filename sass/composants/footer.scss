@@ -1,0 +1,13 @@
+.footerDiv {
+    width: 376px;
+    height: 89px;
+    background-color: $secondary-color;
+    border-radius: 5px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: -15px;
+    right: 50px;
+}

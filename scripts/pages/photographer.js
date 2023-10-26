@@ -1,3 +1,15 @@
+// Récupère les éléments de l'URL les transformant en un couple clé/valeur
+const getUrlQuery = (param) => {
+    const searchParams = new URLSearchParams(document.location.href.split("?")[1])
+
+    // Iterating the search parameters
+    for (const [key, value] of searchParams) {
+        if (key === param) {
+            return value
+        }
+    }
+}
+
 //Récupère les data en fonction de l'Id de l'URL
 async function getPhotographer() {
     try {
@@ -16,20 +28,6 @@ async function getPhotographer() {
     }
 }
 
-
-
-// Récupère les éléments de l'URL les transformant en un couple clé/valeur
-const getUrlQuery = (param) => {
-    const searchParams = new URLSearchParams(document.location.href.split("?")[1])
-
-    // Iterating the search parameters
-    for (const [key, value] of searchParams) {
-        if (key === param) {
-            return value
-        }
-    }
-}
-
 async function displayMediaPage(photographerMedia) {
     const mediaSection = document.querySelector(".photograph-media")
     photographerMedia.forEach(media => {
@@ -40,25 +38,12 @@ async function displayMediaPage(photographerMedia) {
       
 }
 
-
-async function getPhotographerMedia() {
-    try {
-        const id = getUrlQuery("id")
-        
-        const response = await fetch("data/photographers.json")
-        const data = await response.json()
-        
-        return res
-    } catch (error) {
-        console.error(error)
-    }
-}
-
 async function initPage() {
     // Récupère les datas des photographes
     const {photogarpherData, photographerMedia} = await getPhotographer()
     photographerTemplatePage(photogarpherData)
     displayMediaPage(photographerMedia)
+    renderFooter(photogarpherData)
 }
 
 initPage()
