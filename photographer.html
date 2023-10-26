@@ -18,7 +18,9 @@
       <div class="photograph-header"></div>
       <div class="photograph-media"></div>
     </main>
+
     <div id="contact_modal">
+      <div class="overlay"></div>
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
@@ -26,8 +28,20 @@
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="firstname">Prénom</label>
+						<input type="text" name="firstname" id="firstname"/>
+					</div>
+          <div>
+						<label for="lastname">Nom</label>
+						<input type="text" name="lastname" id="lastname"/>
+					</div>
+          <div>
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email"/>
+					</div>
+          <div>
+						<label for="textarea">Votre Message</label>
+						<textarea type="text" name="textarea" id="textarea"></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
@@ -38,5 +52,6 @@
     <script src="/scripts/utils/contactForm.js"></script>
     <script src="/scripts/templates/photographerPage.js"></script>
     <script src="/scripts/templates/media.js"></script>
+    <script src="/scripts/templates/modal.js"></script>
   </body>
 </html>
