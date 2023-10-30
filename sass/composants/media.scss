@@ -21,12 +21,23 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .mediaCardInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.mediaCardTitle {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+        &:hover {
+            overflow: visible;
+        }
 }
 
 .mediaCardTitle,

@@ -44,6 +44,7 @@ async function initPage() {
     photographerTemplatePage(photogarpherData)
     displayMediaPage(photographerMedia)
     renderFooter(photogarpherData)
+    generateMediaCardDivListener()
 }
 
 initPage()

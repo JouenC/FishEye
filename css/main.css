@@ -1,7 +1,14 @@
 /*photographHeader ligne 14*/
+.page-layout, .photographer_section, header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
 h1 {
   color: #901C1C;
-  margin-right: 100px;
 }
 
 a {
@@ -25,30 +32,23 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   height: 90px;
 }
 
 .logo {
   height: 50px;
-  margin-left: 100px;
 }
 
 .photographer_section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 100px;
-  max-width: 1200px;
 }
 
 .photographer_section article {
   display: flex;
   flex-direction: column;
   margin-bottom: 100px;
+  justify-content: center;
 }
 
 .photographer_section article h2 {
@@ -156,12 +156,22 @@ header {
   justify-content: center;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .mediaCardInfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.mediaCardTitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mediaCardTitle:hover {
+  overflow: visible;
 }
 
 .mediaCardTitle,
@@ -187,8 +197,8 @@ header {
 }
 
 #contact_modal {
-  /* display: none; */
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden; */
   position: fixed;
   top: 0;
   width: 100vw;
@@ -291,6 +301,17 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+
+.lightbox-video {
+  width: 1050px;
+  height: 900px;
+  border-radius: 5px;
+}
+
+.close-arrow {
+  background-color: #901C1C;
+  position: absolute;
 }
 
 .footerDiv {

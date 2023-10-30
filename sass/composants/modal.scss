@@ -1,6 +1,6 @@
 #contact_modal {
-    /* display: none; */
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
     position: fixed;
     top: 0;
     width: 100vw;
@@ -103,4 +103,15 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+.lightbox-video {
+    width: 1050px;
+    height: 900px;
+    border-radius: 5px;
+}
+
+.close-arrow {
+    background-color: $primary-color;
+    position: absolute;
 }
