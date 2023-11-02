@@ -1,0 +1,51 @@
+.carrousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image {
+    width: 85%;
+    height: 645px;
+    border-radius: 5px;
+    object-fit: contain;
+    margin-top: 25px;
+}
+
+.lightbox-video {
+    width: 85%;
+    height: 645px;
+    border-radius: 5px;
+    object-fit: contain;
+    margin-top: 25px;
+}
+
+.close-arrow {
+    background-color: $primary-color;
+    position: absolute;
+    top: 10px;
+    left: 95%;
+    cursor: pointer;
+}
+
+.fa-chevron-left, .fa-chevron-right {
+    position: absolute;
+    color: $primary-color;
+    top: 50%;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+.fa-chevron-left {
+    left: 2%;
+}
+
+.fa-chevron-right {
+    left: 95%;
+}
+
+.lightbox-title {
+    color: $primary-color;
+    font-size: 24px;
+}

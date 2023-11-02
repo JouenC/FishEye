@@ -303,17 +303,6 @@ form input {
   border-radius: 5px;
 }
 
-.lightbox-video {
-  width: 1050px;
-  height: 900px;
-  border-radius: 5px;
-}
-
-.close-arrow {
-  background-color: #901C1C;
-  position: absolute;
-}
-
 .footerDiv {
   width: 376px;
   height: 89px;
@@ -326,4 +315,56 @@ form input {
   position: fixed;
   bottom: -15px;
   right: 50px;
+}
+
+.carrousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-image {
+  width: 85%;
+  height: 645px;
+  border-radius: 5px;
+  object-fit: contain;
+  margin-top: 25px;
+}
+
+.lightbox-video {
+  width: 85%;
+  height: 645px;
+  border-radius: 5px;
+  object-fit: contain;
+  margin-top: 25px;
+}
+
+.close-arrow {
+  background-color: #901C1C;
+  position: absolute;
+  top: 10px;
+  left: 95%;
+  cursor: pointer;
+}
+
+.fa-chevron-left, .fa-chevron-right {
+  position: absolute;
+  color: #901C1C;
+  top: 50%;
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.fa-chevron-left {
+  left: 2%;
+}
+
+.fa-chevron-right {
+  left: 95%;
+}
+
+.lightbox-title {
+  color: #901C1C;
+  font-size: 24px;
 }/*# sourceMappingURL=main.css.map */

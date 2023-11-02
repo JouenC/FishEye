@@ -58,17 +58,26 @@ const generateMediaCardDivListener = () => {
               modalContainer.style.display = "block";
               modalContainer.innerHTML = `
                 <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
-                <video class="lightbox-video" title="${imageChildren.title}" controls>
-                  <source src="${imageChildren.currentSrc}" type="video/mp4">
-                </video>
+                <div class= "carrousel">
+                  <video class="lightbox-video" title="${imageChildren.title}" controls>
+                    <source src="${imageChildren.currentSrc}" type="video/mp4">
+                  </video>
+                </div>
                 <figcaption class="lightbox-title">${imageChildren.title}</figcaption>
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
               `
             } else {
               modalContainer.style.display = "block";
               modalContainer.innerHTML = `
                 <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
-                <img class= "lightbox-video" title="${imageChildren.title}" src="${imageChildren.currentSrc}" />
-                <h2 class="lightbox-title">${imageChildren.title}</h2>
+                <div class= "carrousel">
+                  <img class= "lightbox-image" alt="${imageChildren.alt}" src="${imageChildren.currentSrc}" />
+                  <h2 class="lightbox-title">${imageChildren.alt}</h2>
+                </div>
+                <i class="fa-solid fa-chevron-left"></i>
+                <i class="fa-solid fa-chevron-right"></i>
+                
               `
             }
         })
