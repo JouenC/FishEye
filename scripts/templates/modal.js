@@ -59,11 +59,13 @@ const generateMediaCardDivListener = () => {
               modalContainer.innerHTML = `
                 <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
                 <div class= "carrousel">
-                  <video class="lightbox-video" title="${imageChildren.title}" controls>
-                    <source src="${imageChildren.currentSrc}" type="video/mp4">
-                  </video>
+                  <div class="lightbox-div">
+                    <video class="lightbox-video" title="${imageChildren.title}" controls>
+                      <source src="${imageChildren.currentSrc}" type="video/mp4">
+                    </video>
+                    <figcaption class="lightbox-title">${imageChildren.title}</figcaption>
+                  </div>
                 </div>
-                <figcaption class="lightbox-title">${imageChildren.title}</figcaption>
                 <i class="fa-solid fa-chevron-left"></i>
                 <i class="fa-solid fa-chevron-right"></i>
               `
@@ -72,8 +74,10 @@ const generateMediaCardDivListener = () => {
               modalContainer.innerHTML = `
                 <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
                 <div class= "carrousel">
-                  <img class= "lightbox-image" alt="${imageChildren.alt}" src="${imageChildren.currentSrc}" />
-                  <h2 class="lightbox-title">${imageChildren.alt}</h2>
+                  <div class="lightbox-div">
+                    <img class= "lightbox-image" alt="${imageChildren.alt}" src="${imageChildren.currentSrc}" />
+                    <h2 class="lightbox-title">${imageChildren.alt}</h2>
+                  </div>
                 </div>
                 <i class="fa-solid fa-chevron-left"></i>
                 <i class="fa-solid fa-chevron-right"></i>

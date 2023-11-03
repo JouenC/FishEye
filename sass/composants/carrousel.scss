@@ -6,7 +6,7 @@
 }
 
 .lightbox-image {
-    width: 85%;
+    // width: 85%;
     height: 645px;
     border-radius: 5px;
     object-fit: contain;
@@ -14,7 +14,7 @@
 }
 
 .lightbox-video {
-    width: 85%;
+    // width: 85%;
     height: 645px;
     border-radius: 5px;
     object-fit: contain;
@@ -22,7 +22,6 @@
 }
 
 .close-arrow {
-    background-color: $primary-color;
     position: absolute;
     top: 10px;
     left: 95%;
@@ -48,4 +47,10 @@
 .lightbox-title {
     color: $primary-color;
     font-size: 24px;
+    font-weight: bold;
+}
+
+.lightbox-div{
+    display: flex;
+    flex-direction: column;
 }

@@ -204,6 +204,8 @@ header {
   width: 100vw;
   height: 100vh;
   transition: visibility 0.4s;
+  z-index: 10px;
+  background-color: rgba(51, 51, 51, 0.8274509804);
 }
 
 #contact_modal.active {
@@ -325,7 +327,6 @@ form input {
 }
 
 .lightbox-image {
-  width: 85%;
   height: 645px;
   border-radius: 5px;
   object-fit: contain;
@@ -333,7 +334,6 @@ form input {
 }
 
 .lightbox-video {
-  width: 85%;
   height: 645px;
   border-radius: 5px;
   object-fit: contain;
@@ -341,7 +341,6 @@ form input {
 }
 
 .close-arrow {
-  background-color: #901C1C;
   position: absolute;
   top: 10px;
   left: 95%;
@@ -367,4 +366,10 @@ form input {
 .lightbox-title {
   color: #901C1C;
   font-size: 24px;
+  font-weight: bold;
+}
+
+.lightbox-div {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */

@@ -6,6 +6,8 @@
     width: 100vw;
     height: 100vh;
     transition: visibility 0.4s;
+    z-index: 10px;
+    background-color: #333333d3;
 }
 
 #contact_modal.active {
