@@ -29,13 +29,15 @@ async function getPhotographer() {
 }
 
 async function displayMediaPage(photographerMedia) {
+    console.log(photographerMedia)
     const mediaSection = document.querySelector(".photograph-media")
+    mediaSection.innerHTML = ""
     photographerMedia.forEach(media => {
         const {getMediaCardDOM} = mediaFactory(media)
         const article = getMediaCardDOM()
-    mediaSection.appendChild(article);
+        mediaSection.appendChild(article)
     })
-      
+    generateMediaCardDivListener()
 }
 
 async function initPage() {
@@ -44,7 +46,6 @@ async function initPage() {
     photographerTemplatePage(photogarpherData)
     displayMediaPage(photographerMedia)
     renderFooter(photogarpherData)
-    generateMediaCardDivListener()
 }
 
 initPage()
