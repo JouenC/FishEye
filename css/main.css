@@ -223,31 +223,31 @@ header {
   border-radius: 5px;
   background-color: #DB8876;
   width: 669px;
-  height: 900px;
+  height: 685px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 0 35px 35px 35px;
   margin: auto;
+  position: absolute;
+  top: 2%;
+  left: 25%;
 }
 
 .modal header {
   justify-content: space-between;
+  align-items: baseline;
   width: 100%;
   height: auto;
 }
 
 .modal header img {
   cursor: pointer;
-  position: fixed;
-  top: 45px;
-  right: 190px;
 }
 
 .modal header h2 {
   font-size: 64px;
-  font-weight: normal;
   margin-top: 0;
 }
 
@@ -260,7 +260,7 @@ form {
 
 form label {
   color: #312E2E;
-  font-size: 36px;
+  font-size: 25px;
 }
 
 form div {
@@ -273,7 +273,7 @@ form div {
 
 form input {
   width: 100%;
-  height: 68px;
+  height: 30px;
   border: none;
   border-radius: 5px;
 }
