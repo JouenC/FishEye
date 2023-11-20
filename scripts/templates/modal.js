@@ -134,7 +134,7 @@ const generateMediaCardDivListener = () => {
           //   <i class="fa-solid fa-chevron-left" onclick="prevImage()"></i>
           //   <i class="fa-solid fa-chevron-right" onclick="nextImage()"></i>   
           // `
-          next = document.getElementById(`${imageChildren.id}-next`)
+          let next = document.getElementById(`${imageChildren.id}-next`)
           next.addEventListener("click", () => {
             let suivant = paginator.nextImage()
 
