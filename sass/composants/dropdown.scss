@@ -1,0 +1,24 @@
+.dropdown-container {
+    display: flex;
+    margin: 30px 100px 0 100px;
+}
+
+.dropdown-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.dropdown {
+    background-color: $primary-color;
+    font-size: 18px;
+    color: white;
+    height: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.dropdown-item:hover {
+    background-color: $price-color;
+}
