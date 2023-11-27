@@ -1,8 +1,3 @@
-// function displayModal() {
-//     const modal = document.getElementById("contact_modal");
-// 	modal.style.display = "block";
-// }
-
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
@@ -52,9 +47,10 @@ function displayModal(photographerName) {
   `
 }
 
+const modalContent = document.querySelector(".photograph-media-content")
+
 function generateVideoModale(image){
-  modalContainer.style.display = "block"
-  modalContainer.innerHTML = `
+  modalContent.innerHTML = `
             <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
             <div class= "carrousel">
               <div class="lightbox-div">
@@ -64,90 +60,85 @@ function generateVideoModale(image){
                 <figcaption class="lightbox-title">${image.title}</figcaption>
               </div>
             </div>
-            <i class="fa-solid fa-chevron-left" id="${image.id}-prev"></i>
-            <i class="fa-solid fa-chevron-right" id="${image.id}-next"></i>
           `
 }
 
 function generatephotoModale(image) {
-  modalContainer.style.display = "block";
-          modalContainer.innerHTML = `
+  console.log(modalContent)
+  // modalContainer.style.display = "block"
+          modalContent.innerHTML = `
             <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
             <div class= "carrousel">
               <div class="lightbox-div">
                 <img class= "lightbox-image" alt="${image.alt}" src="${image.currentSrc}" />
                 <h2 class="lightbox-title">${image.alt}</h2>
               </div>
-            </div>
-            <i class="fa-solid fa-chevron-left" id="${image.id}-prev"></i>
-            <i class="fa-solid fa-chevron-right" id="${image.id}-next""></i>   
+            </div>   
           `
 }
 
 const generateMediaCardDivListener = () => {
   const mediaCards = document.querySelectorAll(".mediaCardDiv")
-  console.log(mediaCards)
 
   const paginator = changeImage(mediaCards)
   mediaCards.forEach(element => {
     element.addEventListener("click", e => {
+      modalContainer.style.display = "block"
       console.log([...element.children].at(0))
       const [imageChildren] = [...element.children]
       paginator.setCurrent(imageChildren)
         if (imageChildren.src.length === 0) {
           generateVideoModale(imageChildren)
-          // modalContainer.style.display = "block";
-          // modalContainer.innerHTML = `
-          //   <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
-          //   <div class= "carrousel">
-          //     <div class="lightbox-div">
-          //       <video class="lightbox-video" title="${imageChildren.title}" controls>
-          //         <source src="${imageChildren.currentSrc}" type="video/mp4">
-          //       </video>
-          //       <figcaption class="lightbox-title">${imageChildren.title}</figcaption>
-          //     </div>
-          //   </div>
-          //   <i class="fa-solid fa-chevron-left" id="${imageChildren.id}-prev"></i>
-          //   <i class="fa-solid fa-chevron-right" id="${imageChildren.id}-next"></i>
-          // `
-          let next = document.getElementById(`${imageChildren.id}-next`)
-          next.addEventListener("click", () => {
-            let suivant = paginator.nextImage()
+          
+          // let next = document.getElementById(`${imageChildren.id}-next`)
+          // next.addEventListener("click", () => {
+          //   console.log("cocou!")
+          //   let suivant = paginator.nextImage()
+          //   console.log(suivant)
 
-            if (suivant.src.length === 0) {
-            generateVideoModale(suivant)
-            } else {
-              generatephotoModale(suivant)
-            }
-          })
+          //   if (suivant.src.length === 0) {
+          //   generateVideoModale(suivant)
+          //   } else {
+          //     generatephotoModale(suivant)
+          //   }
+          // })
         } else {
           generatephotoModale (imageChildren)
-          // modalContainer.style.display = "block";
-          // modalContainer.innerHTML = `
-          //   <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
-          //   <div class= "carrousel">
-          //     <div class="lightbox-div">
-          //       <img class= "lightbox-image" alt="${imageChildren.alt}" src="${imageChildren.currentSrc}" />
-          //       <h2 class="lightbox-title">${imageChildren.alt}</h2>
-          //     </div>
-          //   </div>
-          //   <i class="fa-solid fa-chevron-left" onclick="prevImage()"></i>
-          //   <i class="fa-solid fa-chevron-right" onclick="nextImage()"></i>   
-          // `
-          let next = document.getElementById(`${imageChildren.id}-next`)
-          next.addEventListener("click", () => {
-            let suivant = paginator.nextImage()
 
-            if (suivant.src.length === 0) {
-            generateVideoModale(suivant)
-            } else {
-              generatephotoModale(suivant)
-            }
-          })
+          // let next = document.getElementById(`${imageChildren.id}-next`)
+          // next.addEventListener("click", () => {
+          //   let suivant = paginator.nextImage()
+
+          //   if (suivant.src.length === 0) {
+          //   generateVideoModale(suivant)
+          //   } else {
+          //     generatephotoModale(suivant)
+          //   }
+          // })
 
         }
     })
-  })   
+  }) 
+  let next = document.getElementById("next")
+  next.addEventListener("click", () => {
+    let suivant = paginator.nextImage()
+
+    if (suivant.src.length === 0) {
+      generateVideoModale(suivant)
+    } else {
+      generatephotoModale(suivant)
+    }
+  })
+  let prev = document.getElementById("prev")
+  prev.addEventListener("click", () => {
+    let precedent = paginator.prevImage()
+
+    if (precedent.src.length === 0) {
+      generateVideoModale(precedent)
+    } else {
+      generatephotoModale(precedent)
+    }
+  })
 }
 
 function changeImage(photographerMedia) {
@@ -161,14 +152,14 @@ function changeImage(photographerMedia) {
 
       return itemImage.src === current.src
     })
-    console.log(currentImage)
   }
 
   function prevImage() {
-
+    
     if (currentImage === 0) {
-      currentImage === imageArray.length - 1
+      currentImage = imageArray.length-1
       return imageArray[currentImage].children[0]
+      
     } else {
       currentImage--
       return imageArray[currentImage].children[0]
@@ -178,6 +169,7 @@ function changeImage(photographerMedia) {
   function nextImage() {
 
     if (currentImage === imageArray.length-1) {
+      currentImage = 0
       return imageArray[0].children[0]
     } else {
       currentImage ++
