@@ -28,8 +28,8 @@ async function getPhotographer() {
     }
 }
 
+// Display photographers' media
 async function displayMediaPage(photographerMedia) {
-    console.log(photographerMedia)
     const mediaSection = document.querySelector(".photograph-media")
     mediaSection.innerHTML = ""
     photographerMedia.forEach(media => {
@@ -40,6 +40,7 @@ async function displayMediaPage(photographerMedia) {
     generateMediaCardDivListener()
 }
 
+// Initialise l'affichage de la page
 async function initPage() {
     // Récupère les datas des photographes
     const {photogarpherData, photographerMedia} = await getPhotographer()

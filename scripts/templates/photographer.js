@@ -1,8 +1,10 @@
+// Catch photographers' information for index page
 function photographerTemplate(data) {
     const { name, id, city, country, tagline, price, portrait } = data
 
     const picture = `assets/photographers/${portrait}`
 
+    // Build photographers' card
     function getUserCardDOM() {
         const article = document.createElement( 'article' )
 

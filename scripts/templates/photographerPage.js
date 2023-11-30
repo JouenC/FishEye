@@ -1,3 +1,4 @@
+// Display photographers' information
 function photographerTemplatePage(data) {
     const { name, city, country, tagline, portrait } = data
 
@@ -13,9 +14,9 @@ function photographerTemplatePage(data) {
     const photographElt = document.querySelector(".photograph-header")
     photographElt.innerHTML += photographHeader
 
+    // Contact button
     const contactBttn = document.querySelector(".contact_button")
     contactBttn.addEventListener("click", e => {
-        console.log("name")
         displayModal(name)
     })
 }

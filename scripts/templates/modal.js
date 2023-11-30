@@ -4,16 +4,9 @@ function closeModal() {
 }
 
 const modalContainer = document.getElementById("contact_modal")
-console.log(modalContainer)
-// const openModal = document.querySelectorAll(".photographerLink")
-// console.log(openModal)
-// const modalBtn = document.querySelector(".openModal")
-// console.log(modalBtn)
-// openModal.addEventListener("click", displayModal())
 
+// Display contact modal
 function displayModal(photographerName) {
-  // const photographerName = document.getElementById("namePage")
-  // console.log(photographerName)
   modalContainer.style.display = "block"
   modalContainer.innerHTML = `
     <div class="modal">
@@ -49,6 +42,7 @@ function displayModal(photographerName) {
 
 const modalContent = document.querySelector(".photograph-media-content")
 
+// Display video modal for carrousel
 function generateVideoModale(image){
   modalContent.innerHTML = `
             <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
@@ -63,6 +57,7 @@ function generateVideoModale(image){
           `
 }
 
+// Display image modal for carrousel
 function generatephotoModale(image) {
   console.log(modalContent)
   // modalContainer.style.display = "block"
@@ -77,6 +72,7 @@ function generatephotoModale(image) {
           `
 }
 
+// Display carrousel
 const generateMediaCardDivListener = () => {
   const mediaCards = document.querySelectorAll(".mediaCardDiv")
 
@@ -84,41 +80,21 @@ const generateMediaCardDivListener = () => {
   mediaCards.forEach(element => {
     element.addEventListener("click", e => {
       modalContainer.style.display = "block"
-      console.log([...element.children].at(0))
       const [imageChildren] = [...element.children]
+
+      // Active the chevrons next and previous
       paginator.setCurrent(imageChildren)
+
+        // Display video and image
         if (imageChildren.src.length === 0) {
           generateVideoModale(imageChildren)
-          
-          // let next = document.getElementById(`${imageChildren.id}-next`)
-          // next.addEventListener("click", () => {
-          //   console.log("cocou!")
-          //   let suivant = paginator.nextImage()
-          //   console.log(suivant)
-
-          //   if (suivant.src.length === 0) {
-          //   generateVideoModale(suivant)
-          //   } else {
-          //     generatephotoModale(suivant)
-          //   }
-          // })
         } else {
           generatephotoModale (imageChildren)
-
-          // let next = document.getElementById(`${imageChildren.id}-next`)
-          // next.addEventListener("click", () => {
-          //   let suivant = paginator.nextImage()
-
-          //   if (suivant.src.length === 0) {
-          //   generateVideoModale(suivant)
-          //   } else {
-          //     generatephotoModale(suivant)
-          //   }
-          // })
-
         }
     })
   }) 
+
+  // Avtive next chevron
   let next = document.getElementById("next")
   next.addEventListener("click", () => {
     let suivant = paginator.nextImage()
@@ -129,6 +105,8 @@ const generateMediaCardDivListener = () => {
       generatephotoModale(suivant)
     }
   })
+
+  // Active previous chevron
   let prev = document.getElementById("prev")
   prev.addEventListener("click", () => {
     let precedent = paginator.prevImage()
@@ -141,15 +119,14 @@ const generateMediaCardDivListener = () => {
   })
 }
 
+// prepare a table with images and videos and find the current media
 function changeImage(photographerMedia) {
   let imageArray = [...photographerMedia]
   let currentImage = 0
 
   function setCurrent(current) {
-    console.log(current, photographerMedia)
     currentImage = imageArray.findIndex(item => {
       let itemImage = item.children[0]
-
       return itemImage.src === current.src
     })
   }
