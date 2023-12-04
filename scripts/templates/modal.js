@@ -94,9 +94,7 @@ const generateMediaCardDivListener = () => {
     })
   }) 
 
-  // Avtive next chevron
-  let next = document.getElementById("next")
-  next.addEventListener("click", () => {
+  const toNext = () => {
     let suivant = paginator.nextImage()
 
     if (suivant.src.length === 0) {
@@ -104,11 +102,9 @@ const generateMediaCardDivListener = () => {
     } else {
       generatephotoModale(suivant)
     }
-  })
+  }
 
-  // Active previous chevron
-  let prev = document.getElementById("prev")
-  prev.addEventListener("click", () => {
+  const toPrev = () => {
     let precedent = paginator.prevImage()
 
     if (precedent.src.length === 0) {
@@ -116,7 +112,23 @@ const generateMediaCardDivListener = () => {
     } else {
       generatephotoModale(precedent)
     }
+  }
+
+  // Active next chevron
+  let next = document.getElementById("next")
+  next.addEventListener("click", toNext)
+  window.addEventListener("keydown", (e) => {
+    if (e.keyCode === 39) {
+      return toNext()
+    }
+    if (e.keyCode === 37) {
+      return toPrev()
+    }
   })
+
+  // Active previous chevron
+  let prev = document.getElementById("prev")
+  prev.addEventListener("click", toPrev)
 }
 
 // prepare a table with images and videos and find the current media

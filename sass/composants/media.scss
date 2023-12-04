@@ -57,7 +57,11 @@
 
 .mediaLikeLogo {
     width: 21px;
-    height: 24px;
-    color: $primary-color;
+    height: 24px;  
     font-size: 24px;
+    cursor: pointer;
+}
+
+.like {
+    color: $primary-color;
 }

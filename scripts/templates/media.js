@@ -1,13 +1,13 @@
 function mediaFactory(data) {
     // Destructuring the data object to extract its properties
-    const { id, photographerId, title, image, video, likes } = data;
+    const { id, photographerId, title, image, video, likes } = data
   
     // Defining a function that will return a DOM element for the media card
     function getMediaCardDOM() {
       // Create an article element to contain the media card
-      const article = document.createElement("article");
-      article.className += "mediaCard";
-      article.id = id;
+      const article = document.createElement("article")
+      article.className += "mediaCard"
+      article.id = id
   
       // If the media is an image add the appropriate media card html to the article element
       if (image) {
@@ -18,13 +18,13 @@ function mediaFactory(data) {
         <section class="mediaCardInfo">
           <h2 class="mediaCardTitle">${title}</h2>
           <div class="mediaLikeContainer">
-            <span class="mediaLikeCount">${likes}</span>
+            <span class="mediaLikeCount" id="likeButton-${id}">${likes}</span>
             <div class="mediaLikeButton" aria-label="Cliquer pour liker">
-              <i class="mediaLikeLogo fa-heart fa-solid"></i>
+              <i class="mediaLikeLogo fa-heart fa-solid" id="media-like-button-${id}"></i>
             </div>
           </div>
         </section>
-      `;
+      `
       }
   
       // If the media is a video add the appropriate media card html to the article element
@@ -44,7 +44,7 @@ function mediaFactory(data) {
             </div>
           </div>
         </section>
-      `;
+      `
       }
   
       // Return the article element
@@ -78,7 +78,7 @@ function renderFooter(data) {
         ${price} € / jour
       </div>
     </div>
-  `;
+  `
 
   // Add the footer section HTML to the footer element
   const footer = document.querySelector(".footer")
