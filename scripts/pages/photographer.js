@@ -38,6 +38,8 @@ async function displayMediaPage(photographerMedia) {
         mediaSection.appendChild(article)
     })
     generateMediaCardDivListener()
+    likeManager()
+    TotalLikeManager()
 }
 
 // Initialise l'affichage de la page
@@ -47,7 +49,6 @@ async function initPage() {
     photographerTemplatePage(photogarpherData)
     displayMediaPage(photographerMedia)
     renderFooter(photogarpherData)
-    likeManager()
 }
 
 initPage()

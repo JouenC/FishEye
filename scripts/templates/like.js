@@ -1,8 +1,7 @@
+// Add or remove like
 const addLike = (e) => {
-    console.log("click réussi", e)
     likes = e.target.parentNode.parentNode.innerText
     mediaLike = e.target.parentNode.parentNode.children[0]
-    console.log(likes, mediaLike)
     let additionLike
     if (e.target.classList.contains("like")) {
         additionLike = Number(likes)-1
@@ -14,21 +13,24 @@ const addLike = (e) => {
         mediaLike.textContent = additionLike
         e.target.classList.add("like")
     }
-
-    // const likesValue = likes.target.value
-    // console.log(likesValue)
-    // const {photographerMedia} = getPhotographer()
-    // console.log(photographerMedia)
-    // likes++
-
-    // renderFooter(data)
+    TotalLikeManager ()
 }
 
+// Listen all like button
 const likeManager = ()  => {
     const likeButton = document.querySelectorAll(".mediaLikeLogo")
-    console.log(likeButton)
     likeButton.forEach((event) => {
     event.addEventListener("click", addLike)
     })   
+}
+
+// Add or remove like in the footer
+const TotalLikeManager = () => {
+    const totalLike = document.querySelectorAll(".mediaLikeCount")
+    const res = Array.from(totalLike).reduce((acc, node) => {
+        return Number(node.innerHTML) + acc
+    }, 0)
+    let totalLikeCount = document.querySelector("#totalLikesCount")
+    totalLikeCount.innerHTML = res
 }
 
