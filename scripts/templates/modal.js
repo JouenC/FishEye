@@ -1,6 +1,6 @@
 function closeModal() {
-    const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    const modal = document.getElementById("contact_modal")
+    modal.style.display = "none"
 }
 
 const modalContainer = document.getElementById("contact_modal")
@@ -17,14 +17,14 @@ function displayModal(photographerName) {
         </h2>
         <img src="assets/icons/close-white.svg" onclick="closeModal()" />
       </header>
-			<form>
+			<form id="modalForm">
 				<div>
 					<label for="firstname">Prénom</label>
-					<input type="text" name="firstname" id="firstname"/>
+					<input type="text" name="firstname" id="firstName"/>
 				</div>
         <div>
 					<label for="lastname">Nom</label>
-					<input type="text" name="lastname" id="lastname"/>
+					<input type="text" name="lastname" id="lastName"/>
 				</div>
         <div>
 					<label for="email">Email</label>
@@ -39,6 +39,36 @@ function displayModal(photographerName) {
 		</div>
   `
 }
+
+function validateModalForm(event) {
+
+  // Prevent the default form submission
+  event.preventDefault()
+
+  // Get the elements of the modal form and its inputs
+  const modalForm = document.getElementById("contact_modal")
+  const modal = document.getElementById("modalForm")
+  const firstName = document.getElementById("firstName")
+  const lastName = document.getElementById("lastName")
+  const email = document.getElementById("email")
+  const message = document.getElementById("textarea")
+
+  // Check if the form input data is valid and console.log
+  if (modal.checkValidity()) {
+    console.log({
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      message: message.value,
+    })
+    // modalForm.reset()
+    modalForm.style.display = "none"
+  }
+}
+
+// Add an event listener to validate the contact modal form on submit
+const modalForm = document.getElementById("contact_modal")
+modalForm.addEventListener("submit", validateModalForm)
 
 const modalContent = document.querySelector(".photograph-media-content")
 

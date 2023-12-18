@@ -27,3 +27,15 @@ async function sortMedia(event) {
 sortButton.forEach(item => {
     item.addEventListener("click", sortMedia)
 })
+
+sortButton.forEach(item => {
+    item.addEventListener("keyup", e => {
+        if (e.key === 13) {
+            item.click()
+        }
+    })
+})
+
+sortButton.onclick = function() {
+    alert('Clicked!');
+}
