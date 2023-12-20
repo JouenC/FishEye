@@ -3,6 +3,13 @@ function closeModal() {
     modal.style.display = "none"
 }
 
+// Close modal with escape key
+window.addEventListener("keydown", (e) =>{
+  if (e.keyCode === 27) {
+    return closeModal()
+  }
+})
+
 const modalContainer = document.getElementById("contact_modal")
 
 // Display contact modal
@@ -61,7 +68,6 @@ function validateModalForm(event) {
       email: email.value,
       message: message.value,
     })
-    // modalForm.reset()
     modalForm.style.display = "none"
   }
 }

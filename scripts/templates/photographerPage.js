@@ -4,7 +4,7 @@ function photographerTemplatePage(data) {
 
     const photographHeader = `
         <article class="cardPage">
-            <p id="namePage" class="namePage">${name}</p>
+            <h1 id="namePage" class="namePage">${name}</h1>
             <p class="cityCountryPage">${city}, ${country}</p>
             <p class="tagLinePage">${tagline}</p>
         </article>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -11,17 +11,17 @@
   <body>
     <header>
       <a href="./index.html" aria-label="Fisheye Home page">
-        <img src="assets/images/logo.png" class="logo" />
+        <img src="assets/images/logo.png" class="logo" alt="fisheye logo" />
       </a>
     </header>
     <main id="main">
       <div class="photograph-header"></div>
       <div class="dropdown-container">
         <div class="dropdown-title"> Trier par </div>
-        <select class="dropdown">
-          <option class="dropdown-item" value="Popularité"> Popularité </option>
-          <option class="dropdown-item" value="Date"> Date </option>
-          <option class="dropdown-item" value="Titre"> Titre </option>
+        <select class="dropdown" aria-label="dropdown for media sorting">
+          <option class="dropdown-item" value="Popularité" aria-label="sorting for popularity"> Popularité </option>
+          <option class="dropdown-item" value="Date" aria-label="sorting for date"> Date </option>
+          <option class="dropdown-item" value="Titre" aria-label="sorting for title"> Titre </option>
         </select>
       </div>
       <div class="photograph-media"></div>

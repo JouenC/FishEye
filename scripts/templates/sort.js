@@ -22,6 +22,27 @@ async function sortMedia(event) {
         photographerMedia.sort((a, b) => a.title.localeCompare(b.title))
         displayMediaPage(photographerMedia)
     }
+
+    window.addEventListener("keydown", (e) => {
+        if (e.keyCode === 13) {
+            if (sortValue === "Popularité") {
+                photographerMedia.sort((a, b) => b.likes - a.likes)
+                displayMediaPage(photographerMedia)
+            }
+        
+            // Sort based date
+            if (sortValue === "Date") {
+                photographerMedia.sort((a, b) => new Date(a.date) - new Date(b.date))
+                displayMediaPage(photographerMedia)
+            }
+        
+            // Sort alphabetically
+            if (sortValue === "Titre") {
+                photographerMedia.sort((a, b) => a.title.localeCompare(b.title))
+                displayMediaPage(photographerMedia)
+            } 
+        }
+    })
 }
 
 sortButton.forEach(item => {
@@ -37,5 +58,5 @@ sortButton.forEach(item => {
 })
 
 sortButton.onclick = function() {
-    alert('Clicked!');
+    alert('Clicked!')
 }
