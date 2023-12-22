@@ -8,11 +8,12 @@ function mediaFactory(data) {
       const article = document.createElement("article")
       article.className += "mediaCard"
       article.id = id
+      
   
       // If the media is an image add the appropriate media card html to the article element
       if (image) {
         article.innerHTML = `
-        <div class="mediaCardDiv" aria-label="Bouton d'ouverture de lightbox">
+        <div class="mediaCardDiv" aria-label="Bouton d'ouverture de lightbox" tabindex="0">
           <img class="mediaCardImage" id="${id}" src="assets/images/${photographerId}/${image}" alt="${title}">
         </div>
         <section class="mediaCardInfo">

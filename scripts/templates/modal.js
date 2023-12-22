@@ -1,6 +1,7 @@
 function closeModal() {
     const modal = document.getElementById("contact_modal")
     modal.style.display = "none"
+    // modalContainer.innerHTML = ""
 }
 
 // Close modal with escape key
@@ -95,7 +96,6 @@ function generateVideoModale(image){
 
 // Display image modal for carrousel
 function generatephotoModale(image) {
-  console.log(modalContent)
   // modalContainer.style.display = "block"
           modalContent.innerHTML = `
             <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
