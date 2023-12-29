@@ -1,7 +1,10 @@
+const modalContainer = document.getElementById("contact_modal")
+const mediaContainer = document.getElementById("media_modal")
+
+// Close all modal
 function closeModal() {
-    const modal = document.getElementById("contact_modal")
-    modal.style.display = "none"
-    // modalContainer.innerHTML = ""
+    modalContainer.style.display = "none"
+    mediaContainer.style.display = "none"
 }
 
 // Close modal with escape key
@@ -11,7 +14,7 @@ window.addEventListener("keydown", (e) =>{
   }
 })
 
-const modalContainer = document.getElementById("contact_modal")
+
 
 // Display contact modal
 function displayModal(photographerName) {
@@ -48,69 +51,29 @@ function displayModal(photographerName) {
   `
 }
 
-function validateModalForm(event) {
-
-  // Prevent the default form submission
-  event.preventDefault()
-
-  // Get the elements of the modal form and its inputs
-  const modalForm = document.getElementById("contact_modal")
-  const modal = document.getElementById("modalForm")
-  const firstName = document.getElementById("firstName")
-  const lastName = document.getElementById("lastName")
-  const email = document.getElementById("email")
-  const message = document.getElementById("textarea")
-
-  // for (let value of modal) {
-  //   console.log(value.innerHTML)
-  //   if (value.innerHTML === "") {
-  //     console.log('error')
-  //   } else { if (modal.checkValidity()) {
-  //     console.log({
-  //       firstName: firstName.value,
-  //       lastName: lastName.value,
-  //       email: email.value,
-  //       message: message.value,
-  //     })
-  //     modalForm.style.display = "none"
-  //   }}
-  // }
-
-  // Check if the form input data is valid and console.log
-  if (modal.checkValidity()) {
-    console.log({
-      firstName: firstName.value,
-      lastName: lastName.value,
-      email: email.value,
-      message: message.value,
-    })
-    modalForm.style.display = "none"
-  }
-}
-
-// Add an event listener to validate the contact modal form on submit
+// Validate form
+const modal = document.getElementById("modalForm")
 const modalForm = document.getElementById("contact_modal")
-modalForm.addEventListener("submit", validateModalForm)
+let formulaire = {}
 
-// const modal = document.getElementById("modalForm")
-// const modalForm = document.getElementById("contact_modal")
-// const validator = (e) => Boolean(e) === true
-// console.log(modal)
-// let formulaire = {}
-// modalForm.addEventListener("submit", function(e) {
-//   e.preventDefault()
-//   console.log(modalForm)
-//   const formData = new FormData(modalForm)
+modalForm.addEventListener("submit", function(e) {
+  e.preventDefault()
+  const form = document.getElementById("modalForm")
+  const validator = (e) => Boolean(e) === true
+  const formData = new FormData(form)
   
-//   for (let [key, value] of formData) {
-//     if(validator(value)) {
-//       formulaire = {...formulaire, [key]:value}
-//     } else {
-//       formulaire = {...formulaire, [key]:"Error"}
-//     }
-//   }
-//   console.log(formulaire)
-// })
+  // Catch key and value
+  for (let [key, value] of formData) {
+    if(validator(value)) {
+      formulaire = {...formulaire, [key]:value}
+    } else {
+      formulaire = {...formulaire, [key]:"Error"}
+    }
+  }
+
+  // Display form on console
+  console.log(formulaire)
+})
 
 const modalContent = document.querySelector(".photograph-media-content")
 
@@ -131,7 +94,6 @@ function generateVideoModale(image){
 
 // Display image modal for carrousel
 function generatephotoModale(image) {
-  // modalContainer.style.display = "block"
           modalContent.innerHTML = `
             <img class= "close-arrow" src="assets/icons/close.svg" onclick="closeModal()" />
             <div class= "carrousel">
@@ -143,23 +105,11 @@ function generatephotoModale(image) {
           `
 }
 
-// Display carrousel
-const generateMediaCardDivListener = () => {
+// Create corousel with current image
+function createCarousel (element) {
   const mediaCards = document.querySelectorAll(".mediaCardDiv")
-
   const paginator = changeImage(mediaCards)
-
-  // mediaCards.forEach(element => {
-  //   element.addEventListener("keypress", (e) => {
-  //     if (e.keyPress === "enter") {
-  //     console.log("ok")
-  //     }
-  //   })
-  // })
-
-  mediaCards.forEach(element => {
-    element.addEventListener("click", e => {
-      modalContainer.style.display = "block"
+  mediaContainer.style.display = "block"
       const [imageChildren] = [...element.children]
 
       // Active the chevrons next and previous
@@ -171,6 +121,25 @@ const generateMediaCardDivListener = () => {
         } else {
           generatephotoModale (imageChildren)
         }
+}
+
+// Display carrousel
+const generateMediaCardDivListener = () => {
+  const mediaCards = document.querySelectorAll(".mediaCardDiv")
+  const paginator = changeImage(mediaCards)
+
+  mediaCards.forEach(element => {
+    element.addEventListener("keypress", (e) => {
+      
+      // Call carousel with keyboard
+      if (e.key === "Enter") {
+        console.log(element)
+        createCarousel(element)
+      }
+    })
+
+    element.addEventListener("click", e => {
+      createCarousel(element)
     })
   }) 
 

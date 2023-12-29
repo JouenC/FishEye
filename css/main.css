@@ -200,7 +200,7 @@ header {
   color: #901C1C;
 }
 
-#contact_modal {
+.HTMLModal {
   display: none;
   position: fixed;
   top: 0;
@@ -236,7 +236,7 @@ header {
   margin: auto;
   position: absolute;
   top: 2%;
-  left: 25%;
+  left: 20%;
 }
 
 .modal header {
