@@ -61,6 +61,21 @@ function validateModalForm(event) {
   const email = document.getElementById("email")
   const message = document.getElementById("textarea")
 
+  // for (let value of modal) {
+  //   console.log(value.innerHTML)
+  //   if (value.innerHTML === "") {
+  //     console.log('error')
+  //   } else { if (modal.checkValidity()) {
+  //     console.log({
+  //       firstName: firstName.value,
+  //       lastName: lastName.value,
+  //       email: email.value,
+  //       message: message.value,
+  //     })
+  //     modalForm.style.display = "none"
+  //   }}
+  // }
+
   // Check if the form input data is valid and console.log
   if (modal.checkValidity()) {
     console.log({
@@ -76,6 +91,26 @@ function validateModalForm(event) {
 // Add an event listener to validate the contact modal form on submit
 const modalForm = document.getElementById("contact_modal")
 modalForm.addEventListener("submit", validateModalForm)
+
+// const modal = document.getElementById("modalForm")
+// const modalForm = document.getElementById("contact_modal")
+// const validator = (e) => Boolean(e) === true
+// console.log(modal)
+// let formulaire = {}
+// modalForm.addEventListener("submit", function(e) {
+//   e.preventDefault()
+//   console.log(modalForm)
+//   const formData = new FormData(modalForm)
+  
+//   for (let [key, value] of formData) {
+//     if(validator(value)) {
+//       formulaire = {...formulaire, [key]:value}
+//     } else {
+//       formulaire = {...formulaire, [key]:"Error"}
+//     }
+//   }
+//   console.log(formulaire)
+// })
 
 const modalContent = document.querySelector(".photograph-media-content")
 
@@ -113,6 +148,15 @@ const generateMediaCardDivListener = () => {
   const mediaCards = document.querySelectorAll(".mediaCardDiv")
 
   const paginator = changeImage(mediaCards)
+
+  // mediaCards.forEach(element => {
+  //   element.addEventListener("keypress", (e) => {
+  //     if (e.keyPress === "enter") {
+  //     console.log("ok")
+  //     }
+  //   })
+  // })
+
   mediaCards.forEach(element => {
     element.addEventListener("click", e => {
       modalContainer.style.display = "block"
